@@ -139,10 +139,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
 
-        self.plainTextEdit = QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setObjectName(u"plainTextEdit")
+        self.salida = QPlainTextEdit(self.centralwidget)
+        self.salida.setObjectName(u"salida")
 
-        self.gridLayout_2.addWidget(self.plainTextEdit, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.salida, 0, 1, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
