@@ -1,10 +1,13 @@
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import Slot
 from ui_mainwindow import Ui_MainWindow
+from Libreria_Part.administrador import Administrador
+from Libreria_Part.particula import Particula
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
+        self.administrador = Administrador()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.agregar_final_pushButton.clicked.connect(self.click_agregar)
@@ -21,7 +24,12 @@ class MainWindow(QMainWindow):
         green = self.ui.green_spinBox.value()
         blue = self.ui.blue_spinBox.value()
 
-        print (id, origen_x, origen_y, destino_x, destino_y, velocidad, red, green, blue)
-        
-             
+        particula = Particula(id, origen_x, origen_y, destino_x, destino_y, velocidad, red, green, blue)
+        self.administrador.agregar_final(particula)
+
+
+        #print (id, origen_x, origen_y, destino_x, destino_y, velocidad, red, green, blue)
+        #self.ui.salida.insertPlainText (id + str(origen_x) + str(origen_y) + str(destino_x) + str(destino_y) + 
+        #velocidad + str(red) + str(green) + str(blue))
+
 
